@@ -2,6 +2,7 @@ uniform sampler2D texture;
 uniform float time;
 uniform vec2 resolution;
 
+
 float sigmaFun(float x)
 {
 	return 1.0/(1.0+exp(-x));
@@ -43,17 +44,17 @@ void main( void ) {
 	
 	float k=time*10000.0;
 	
-	for(int i =1;i<100;i++)
+	for(int i =1;i<500;i++)
 	{
 
 
 			//float r=cos(float(i)*k)/cos(float(i)/k);
 			
-		float r =float(i)*0.01;
+		float r =float(i)*0.01*cos(time);
 		
 		
-			float y=r*sin(float(i)*0.001);
-    			float x=r*cos(float(i)*0.01);
+			float y=r*sin(float(i)*0.01*sin(time));
+    			float x=r*cos(float(i)*0.01*cos(time));
 			
 			color+=colormap(CalcZ_EquestionOfSauss(p*0.5*t+200.0*t*vec2(x,y),100.5));
 
@@ -61,7 +62,21 @@ void main( void ) {
 		 k+=10.1;
 	}
 	
+	
+	for(int i =1;i<500;i++)
+	{
 
+
+			float r=float(i)*0.01*sin(time);
+			
+			float y=r*sin(float(i)*0.01*cos(time));
+    			float x=r*cos(float(i)*0.01*sin(time));
+			
+			color+=colormap(CalcZ_EquestionOfSauss(p*0.5*t+200.0*sigmaFun(cos(time))*vec2(x,y),100.5));
+		
+		 k+=0.001;
+	}
+	
 	
 	color.r=sin(color.r*sin(time));
 	
