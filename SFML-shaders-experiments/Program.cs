@@ -9,7 +9,7 @@ namespace SFML_shaders_experiments
   
         static void Main(string[] args)
         {
-            Game game = new Experiment1_PolarPlot(RenderTo.Window);
+            Game game = new Experiment1_PolarPlot(RenderTo.Image);
             game.Run();
   
         }
