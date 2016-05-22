@@ -2,7 +2,6 @@ uniform sampler2D texture;
 uniform float time;
 uniform vec2 resolution;
 
-
 float sigmaFun(float x)
 {
 	return 1.0/(1.0+exp(-x));
@@ -10,14 +9,19 @@ float sigmaFun(float x)
 
 vec4 colormap(float x){
 
+	
 	x*=0.05;
-	return vec4( smoothstep(0.0,1.0,1.0/x),  smoothstep(0.0,1.0,x*x), smoothstep(0.0,1.0,x),1.0);	
+	vec4 color = vec4( smoothstep(0.0,1.0,sin(1.0/x)),  smoothstep(0.0,1.0,cos(x*x)), smoothstep(0.0,1.0,sin(x)),1.0);
+	
+
+	return color;	
 }
 
 float CalcZ_EquestionOfSauss(vec2 xy, float sigma)
 {
 	return  (1.0 / (2.0 * 3.14 * sigma)) * (dot(xy,xy) / 2.0 * sigma);
 }
+
 
 float Hash( vec2 p)
 {
