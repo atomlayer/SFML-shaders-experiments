@@ -44,13 +44,16 @@ void main( void ) {
 	
 	float k=time*10000.0;
 	
-	for(int i =1;i<500;i++)
+	
+
+	
+	for(int i =1;i<100;i++)
 	{
 
 
-			//float r=cos(float(i)*k)/cos(float(i)/k);
+			float r=cos(float(i)*k*cos(k))/cos(float(i)/k);
 			
-		float r =float(i)*0.01*cos(time);
+		//float r =float(i)*0.01*cos(time);
 		
 		
 			float y=r*sin(float(i)*0.01*sin(time));
@@ -59,11 +62,31 @@ void main( void ) {
 			color+=colormap(CalcZ_EquestionOfSauss(p*0.5*t+200.0*t*vec2(x,y),100.5));
 
 		
-		 k+=10.1;
+		 k+=0.001;
+	}
+	
+
+	
+	for(int i =1;i<500;i++)
+	{
+
+
+			float r=cos(float(i)*time)/cos(float(i)/k);
+			
+		//float r =float(i)*0.01*cos(time);
+		
+		
+			float y=r*sin(float(i)*0.01*sin(time));
+    			float x=r*cos(float(i)*0.01*cos(time));
+			
+			color+=colormap(CalcZ_EquestionOfSauss(p*0.5*t+200.0*t*vec2(x,y),100.5));
+
+		
+		 k+=0.01;
 	}
 	
 	
-	for(int i =1;i<500;i++)
+	for(int i =1;i<200;i++)
 	{
 
 
@@ -82,6 +105,7 @@ void main( void ) {
 	
 	color.g=0.01;
 	
+	//color.r=0.01;
 	
 	color.b=0.01;
 	
