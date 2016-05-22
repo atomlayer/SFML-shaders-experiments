@@ -11,7 +11,7 @@ vec4 colormap(float x){
 
 	
 	x*=0.05;
-	vec4 color = vec4( smoothstep(0.0,1.0,sin(1.0/x)),  smoothstep(0.0,1.0,cos(x*x)), smoothstep(0.0,1.0,sin(x)),1.0);
+	vec4 color = vec4( smoothstep(0.0,1.0,1.0/x),  smoothstep(0.0,1.0,x*x), smoothstep(0.0,1.0,x),1.0);
 	
 
 	return color;	
@@ -21,7 +21,6 @@ float CalcZ_EquestionOfSauss(vec2 xy, float sigma)
 {
 	return  (1.0 / (2.0 * 3.14 * sigma)) * (dot(xy,xy) / 2.0 * sigma);
 }
-
 
 float Hash( vec2 p)
 {
@@ -44,44 +43,32 @@ void main( void ) {
 	
 	float k=time*10000.0;
 	
-	for(int i =1;i<200;i++)
+	for(int i =1;i<100;i++)
 	{
 
 
-			float r=cos(float(i)*k)/cos(float(i)/k);
+			//float r=cos(float(i)*k)/cos(float(i)/k);
 			
-			float y=r*sin(float(i));
-    			float x=r*cos(float(i));
+		float r =float(i)*0.01;
+		
+		
+			float y=r*sin(float(i)*0.001);
+    			float x=r*cos(float(i)*0.01);
 			
 			color+=colormap(CalcZ_EquestionOfSauss(p*0.5*t+200.0*t*vec2(x,y),100.5));
 
 		
-		 k+=0.001;
+		 k+=10.1;
 	}
 	
-	
-	for(int i =1;i<200;i++)
-	{
 
-
-			float r=cos(float(i)*k)/cos(float(i)/k);
-			
-			float y=r*sin(float(i));
-    			float x=r*cos(float(i));
-			
-			color+=colormap(CalcZ_EquestionOfSauss(p*0.5*t+200.0*sigmaFun(cos(time))*vec2(x,y),100.5));
-		
-		 k+=0.001;
-	}
-	
 	
 	color.r=sin(color.r*sin(time));
 	
 	color.g=0.01;
 	
-	//color.r=0.01;
 	
-	color.b=0.1;
+	color.b=0.01;
 	
 	gl_FragColor = color;
 }
