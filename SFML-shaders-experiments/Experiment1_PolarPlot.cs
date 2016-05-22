@@ -7,7 +7,7 @@ namespace SFML_shaders_experiments
     class Experiment1_PolarPlot :Game
     {
         public Experiment1_PolarPlot(RenderTo render) 
-            : base(800, 800, "Shader1 PolarPlot", Color.Blue,render)
+            : base(1800, 1000, "Shader1 PolarPlot", Color.Blue,render)
         {
 
         }
@@ -28,8 +28,8 @@ namespace SFML_shaders_experiments
             _rectangleShape = new RectangleShape(new Vector2f(window.Size.X, window.Size.Y));
             _rectangleShape.Texture = _texture;
 
-            _shader = new Shader(@"shareds\VertexShader.vert",
-                @"shareds\Experiment1_PolarPlot.frag");
+            _shader = new Shader(@"shaders\VertexShader.vert",
+                @"shaders\Experiment1_PolarPlot.frag");
 
             _shader.SetParameter("time", _time);
             _shader.SetParameter("resolution",new Vector2f(window.Size.X,window.Size.Y));

@@ -76,7 +76,7 @@ namespace SFML_shaders_experiments
 
                 FPS = 1/(float)_stopwatch.ElapsedMilliseconds*1000;
 
-                Console.WriteLine($"FPS {FPS:#.#}");
+                Console.WriteLine($"FPS {FPS:#.#}   count = {_index}");
 
                 _stopwatch.Restart();
             }
