@@ -21,6 +21,11 @@ namespace SFML_shaders_experiments
 
         private RenderStates _rState;
 
+        public override void Load()
+        {
+
+        }
+
         public override void Initialize()
         {
             _texture = new Texture(window.Size.X,window.Size.Y);

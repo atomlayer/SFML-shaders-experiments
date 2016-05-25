@@ -16,7 +16,7 @@ namespace SFML_shaders_experiments
         Stopwatch _stopwatch = new Stopwatch();
 
 
-        public int FrameRateLimit = 60;
+        public int FrameRateLimit = 500;
 
         public RenderTo RenderTo;
 
@@ -35,6 +35,8 @@ namespace SFML_shaders_experiments
             RenderTexture = new RenderTexture(window.Size.X, window.Size.Y);
         }
 
+        public abstract void Load();
+
         public abstract void Initialize();
 
         public abstract void Update();
@@ -48,6 +50,7 @@ namespace SFML_shaders_experiments
 
         public void Run()
         {
+            Load();
             Initialize();
 
             _stopwatch.Start();
