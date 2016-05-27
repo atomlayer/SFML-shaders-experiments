@@ -57,6 +57,8 @@ namespace SFML_shaders_experiments
 
         public override void Initialize()
         {
+
+
             _texture = new Texture(window.Size.X,window.Size.Y);
 
             _rectangleShape = new RectangleShape(new Vector2f(window.Size.X, window.Size.Y));
@@ -67,6 +69,9 @@ namespace SFML_shaders_experiments
 
             _shader.SetParameter("frequency", 0);
             _shader.SetParameter("resolution",new Vector2f(window.Size.X,window.Size.Y));
+
+  
+
             _rState = new RenderStates(_shader);
             _rState.Texture = _texture;
 
@@ -77,7 +82,6 @@ namespace SFML_shaders_experiments
 
         public override void Update()
         {
-
             _shader.SetParameter("frequency", _frames[index]);
             index++;
         }

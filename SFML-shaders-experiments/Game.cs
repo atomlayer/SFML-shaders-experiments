@@ -16,7 +16,7 @@ namespace SFML_shaders_experiments
         Stopwatch _stopwatch = new Stopwatch();
 
 
-        public int FrameRateLimit = 500;
+        public int FrameRateLimit = 60;
 
         public RenderTo RenderTo;
 

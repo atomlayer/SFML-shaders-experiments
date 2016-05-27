@@ -9,7 +9,7 @@ namespace SFML_shaders_experiments
   
         static void Main(string[] args)
         {
-            Game game = new Experiment2_MusicVisualization(RenderTo.Window);
+            Game game = new Experiment3_ArtificialSun(RenderTo.Image);
             game.Run();
   
         }
