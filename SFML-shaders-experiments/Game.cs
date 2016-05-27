@@ -23,16 +23,22 @@ namespace SFML_shaders_experiments
         protected Game(uint width, uint height, string title, Color clearColor, RenderTo renderTo)
         {
             Size = new Vector2u(width,height);
-            this.window = new RenderWindow(new VideoMode(width, height), title, Styles.Resize);
-            this.clearColor = clearColor;
             RenderTo = renderTo;
-            window.SetActive(true);
-            window.Position=new Vector2i(window.Position.X,0);
-            window.SetFramerateLimit((uint)FrameRateLimit);
-            // Set up events
-            window.Closed += OnClosed;
+            this.clearColor = clearColor;
 
-            RenderTexture = new RenderTexture(window.Size.X, window.Size.Y);
+
+            if (RenderTo == RenderTo.Window)
+            {
+                this.window = new RenderWindow(new VideoMode(width, height), title, Styles.Resize);
+                window.SetActive(true);
+                window.Position = new Vector2i(window.Position.X, 0);
+                window.SetFramerateLimit((uint) FrameRateLimit);
+                // Set up events
+                window.Closed += OnClosed;
+            }
+            else
+                RenderTexture = new RenderTexture(Size.X, Size.Y);
+         
         }
 
         public abstract void Load();
@@ -55,13 +61,15 @@ namespace SFML_shaders_experiments
 
             _stopwatch.Start();
 
-            while (window.IsOpen)
+            while (true)
             {
-                window.DispatchEvents();
+                
                 Update();
 
                 if (RenderTo == RenderTo.Window)
                 {
+                    window.DispatchEvents();
+
                     window.Clear(clearColor);
                     Render();
                     window.Display();
@@ -70,8 +78,11 @@ namespace SFML_shaders_experiments
                 {
                     RenderTexture.Clear(Color.Blue);
                     Render();
-                    RenderTexture.Texture.CopyToImage().SaveToFile($"data\\img{_index}.png");
-                    RenderTexture.Display();
+                    Texture texture = RenderTexture.Texture;
+                    Image image = texture.CopyToImage();
+                    image.SaveToFile($"data\\img{_index}.png");
+                    image.Dispose();
+
                 }
 
                 _index++;

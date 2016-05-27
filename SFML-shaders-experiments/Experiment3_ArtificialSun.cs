@@ -28,7 +28,6 @@ namespace SFML_shaders_experiments
 
         }
 
-
         class ShaderHolder
         {
             public Shader Shader;
@@ -56,12 +55,14 @@ namespace SFML_shaders_experiments
         {
 
             FrameRateLimit = 60;
+
+            if(RenderTo==RenderTo.Window)
             window.SetFramerateLimit((uint)FrameRateLimit);
 
 
-            _texture = new Texture(window.Size.X,window.Size.Y);
+            _texture = new Texture(Size.X,Size.Y);
 
-            _rectangleShape = new RectangleShape(new Vector2f(window.Size.X, window.Size.Y));
+            _rectangleShape = new RectangleShape(new Vector2f(Size.X, Size.Y));
             _rectangleShape.Texture = _texture;
 
 
