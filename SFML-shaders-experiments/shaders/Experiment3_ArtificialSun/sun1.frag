@@ -33,7 +33,7 @@ void main( void ) {
  
 	vec2 p = gl_FragCoord.xy-resolution/2.0;	
 	
-	p*=4.0;
+	p*=1.5;
 	
 	vec4 color=vec4(0.0,0.0,0.0,1.0);
 	

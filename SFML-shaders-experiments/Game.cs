@@ -76,7 +76,7 @@ namespace SFML_shaders_experiments
                 }
                 else
                 {
-                    RenderTexture.Clear(Color.Blue);
+                    RenderTexture.Clear(clearColor);
                     Render();
                     Texture texture = RenderTexture.Texture;
                     Image image = texture.CopyToImage();

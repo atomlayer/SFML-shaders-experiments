@@ -11,8 +11,9 @@ namespace SFML_shaders_experiments
 {
     class Experiment3_ArtificialSun : Game
     {
-        public Experiment3_ArtificialSun(RenderTo render) 
+        public Experiment3_ArtificialSun(RenderTo render)
             : base(1920, 1080, "Experiment3_ArtificialSun", Color.Blue,render)
+            //: base(500, 500, "Experiment3_ArtificialSun", Color.Blue, render)
         {
 
         }
@@ -54,7 +55,7 @@ namespace SFML_shaders_experiments
         public override void Initialize()
         {
 
-            FrameRateLimit = 60;
+            FrameRateLimit = 30;
 
             if(RenderTo==RenderTo.Window)
             window.SetFramerateLimit((uint)FrameRateLimit);
@@ -65,8 +66,7 @@ namespace SFML_shaders_experiments
             _rectangleShape = new RectangleShape(new Vector2f(Size.X, Size.Y));
             _rectangleShape.Texture = _texture;
 
-
-            int time = 330;
+            int time = 100;
 
             
             Regex regex = new Regex(@"(\d+).frag");
