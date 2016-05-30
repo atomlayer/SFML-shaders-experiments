@@ -60,6 +60,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Experiment5_SphereEquation.cs" />
+    <Compile Include="Experiment4_BackBuffer.cs" />
     <Compile Include="Experiment3_ArtificialSun.cs" />
     <Compile Include="Experiment2_MusicVisualization.cs" />
     <Compile Include="Game.cs" />
@@ -101,6 +103,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="shaders\Experiment3_ArtificialSun\sun9.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\sphere\sphere1.frag">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="shaders\VertexShader.vert">

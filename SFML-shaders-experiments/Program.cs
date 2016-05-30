@@ -9,7 +9,7 @@ namespace SFML_shaders_experiments
   
         static void Main(string[] args)
         {
-            Game game = new Experiment3_ArtificialSun(RenderTo.Image);
+            Game game = new Experiment5_SphereEquation(RenderTo.Window);
             game.Run();
   
         }

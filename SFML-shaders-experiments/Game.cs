@@ -73,6 +73,7 @@ namespace SFML_shaders_experiments
                     window.Clear(clearColor);
                     Render();
                     window.Display();
+
                 }
                 else
                 {
