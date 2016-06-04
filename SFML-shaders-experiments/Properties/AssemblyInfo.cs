@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("SFML-shaders-experiments")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("KrotySOFT")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("SFML-shaders-experiments")]
-[assembly: AssemblyCopyright("Copyright © KrotySOFT 2016")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
