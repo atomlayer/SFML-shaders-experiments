@@ -1,6 +1,10 @@
 ﻿
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using SFML.Graphics;
 using SFML.System;
+using Color = SFML.Graphics.Color;
 
 namespace SFML_shaders_experiments
 {
@@ -48,16 +52,38 @@ namespace SFML_shaders_experiments
         {
           
             _shader.SetParameter("time", _time);
+            _shader.SetParameter("texture2", GetTexture());
             _time += 0.05f;
+        }
+
+        public byte[] ImageToByte(System.Drawing.Image img)
+        {
+            ImageConverter converter = new ImageConverter();
+                return (byte[])converter.ConvertTo(img, typeof(byte[]));
+        }
+
+
+        Texture GetTexture()
+        {
+            Bitmap bitmap = new Bitmap(2, 2, PixelFormat.Format32bppArgb);
+
+            System.Drawing.Color color = System.Drawing.Color.FromArgb(255, 127, 127, 127);
+
+            bitmap.SetPixel(0, 0, color);
+            bitmap.SetPixel(0, 1, color);
+            bitmap.SetPixel(1, 0, color);
+            bitmap.SetPixel(1, 1, color);
+
+            return new Texture(ImageToByte(bitmap));
         }
 
         public override void Render()
         {
-            VertexArray vertexArray = new VertexArray(PrimitiveType.Points);
-            vertexArray.Append(new Vertex(new Vector2f(500,500)));
+
             
-            
-            window.Draw(vertexArray,_rState);
+
+
+            window.Draw(_rectangleShape, _rState);
 
 
             /*if (RenderTo == RenderTo.Window)
