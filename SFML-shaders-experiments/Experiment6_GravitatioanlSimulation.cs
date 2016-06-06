@@ -2,8 +2,10 @@
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using GravitatioanlSimulation.Models._2D;
 using SFML.Graphics;
 using SFML.System;
+using SFML_shaders_experiments.GravitatioanlSimulation;
 using Color = SFML.Graphics.Color;
 
 namespace SFML_shaders_experiments
@@ -30,6 +32,8 @@ namespace SFML_shaders_experiments
 
         }
 
+        private DataAdapter2D _dataAdapter2D;
+
         public override void Initialize()
         {
             _texture = new Texture(window.Size.X,window.Size.Y);
@@ -44,6 +48,9 @@ namespace SFML_shaders_experiments
             _shader.SetParameter("resolution",new Vector2f(window.Size.X,window.Size.Y));
             _rState = new RenderStates(_shader);
             _rState.Texture = _texture;
+
+            _dataAdapter2D = new DataAdapter2D(new Model2DGeneratorForShadersExp(), _rectangleShape.Size);
+
         }
 
         
@@ -52,30 +59,12 @@ namespace SFML_shaders_experiments
         {
           
             _shader.SetParameter("time", _time);
-            _shader.SetParameter("texture2", GetTexture());
+            _shader.SetParameter("texture2", _dataAdapter2D.GetTexture());
             _time += 0.05f;
+            _dataAdapter2D.NextStep();
         }
 
-        public byte[] ImageToByte(System.Drawing.Image img)
-        {
-            ImageConverter converter = new ImageConverter();
-                return (byte[])converter.ConvertTo(img, typeof(byte[]));
-        }
-
-
-        Texture GetTexture()
-        {
-            Bitmap bitmap = new Bitmap(2, 2, PixelFormat.Format32bppArgb);
-
-            System.Drawing.Color color = System.Drawing.Color.FromArgb(255, 127, 127, 127);
-
-            bitmap.SetPixel(0, 0, color);
-            bitmap.SetPixel(0, 1, color);
-            bitmap.SetPixel(1, 0, color);
-            bitmap.SetPixel(1, 1, color);
-
-            return new Texture(ImageToByte(bitmap));
-        }
+  
 
         public override void Render()
         {

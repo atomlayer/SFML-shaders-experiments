@@ -34,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.1.1.2225.0\lib\net20\OpenTK.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="sfmlnet-audio-2, Version=2.2.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\sfmlnet-audio-2.dll</HintPath>
@@ -67,6 +71,10 @@
     <Compile Include="Experiment3_ArtificialSun.cs" />
     <Compile Include="Experiment2_MusicVisualization.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="GravitatioanlSimulation\DataAdapter2D.cs" />
+    <Compile Include="GravitatioanlSimulation\Models\2D\IModelGenerator.cs" />
+    <Compile Include="GravitatioanlSimulation\Models\2D\Model2D.cs" />
+    <Compile Include="GravitatioanlSimulation\Models\2D\Model2DGeneratorForShadersExp.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Experiment1_PolarPlot.cs" />
@@ -74,6 +82,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="OpenTK.dll.config" />
+    <None Include="packages.config" />
     <None Include="shaders\Experiment1_PolarPlot.frag">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

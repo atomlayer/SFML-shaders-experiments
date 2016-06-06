@@ -32,7 +32,7 @@ namespace SFML_shaders_experiments
                 this.window = new RenderWindow(new VideoMode(width, height), title, Styles.Resize);
                 window.SetActive(true);
                 window.Position = new Vector2i(window.Position.X, 0);
-                window.SetFramerateLimit((uint) FrameRateLimit);
+                //window.SetFramerateLimit((uint) FrameRateLimit);
                 // Set up events
                 window.Closed += OnClosed;
             }
