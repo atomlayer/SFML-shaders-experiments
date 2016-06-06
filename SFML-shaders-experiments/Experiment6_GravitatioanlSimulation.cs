@@ -60,6 +60,7 @@ namespace SFML_shaders_experiments
           
             _shader.SetParameter("time", _time);
             _shader.SetParameter("texture2", _dataAdapter2D.GetTexture());
+            _shader.SetParameter("sizeOfImage",_dataAdapter2D.SizeOfImage);
             _time += 0.05f;
             _dataAdapter2D.NextStep();
         }
@@ -69,18 +70,12 @@ namespace SFML_shaders_experiments
         public override void Render()
         {
 
-            
-
-
-            window.Draw(_rectangleShape, _rState);
-
-
-            /*if (RenderTo == RenderTo.Window)
+            if (RenderTo == RenderTo.Window)
                 window.Draw(_rectangleShape, _rState);
             else
             {
                 RenderTexture.Draw(_rectangleShape, _rState);
-            }*/
+            }
         }
     }
 }

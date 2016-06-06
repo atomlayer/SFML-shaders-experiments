@@ -15,19 +15,23 @@ namespace SFML_shaders_experiments.GravitatioanlSimulation
 
         private int[] _normalized_m;
 
+        public int SizeOfImage;
 
         public DataAdapter2D(IModel2DGenerator model2DGenerator, Vector2f areaSize)
         {
             _model2D = model2DGenerator.Generate();
-            AreaSize = areaSize;
+            _areaSize = areaSize*0.5f;
 
             float max_m = _model2D.m.Max();
             float min_m = _model2D.m.Min();
 
             _normalized_m = _model2D.m.Select(n => (int)(GetPersentage(n, min_m, max_m)*255)).ToArray();
+
+            SizeOfImage = (int)Math.Sqrt(_model2D.r.Length);
         }
 
-        public Vector2f AreaSize;
+
+        Vector2f _areaSize;
 
 
         byte[] ImageToByte(System.Drawing.Image img)
@@ -43,7 +47,10 @@ namespace SFML_shaders_experiments.GravitatioanlSimulation
 
             for (int i = 0; i < _model2D.m.Length; i++)
             {
-                if (_model2D.r[i].X > AreaSize.X || _model2D.r[i].Y > AreaSize.Y)
+                if (_model2D.r[i].X > _areaSize.X 
+                    || _model2D.r[i].Y > _areaSize.Y
+                    || _model2D.r[i].X < -_areaSize.X
+                    || _model2D.r[i].Y < -_areaSize.Y)
                     continue;
                 if (_model2D.r[i].X <= min)
                     min = _model2D.r[i].X;
@@ -61,24 +68,21 @@ namespace SFML_shaders_experiments.GravitatioanlSimulation
             return (x - min)/(max - min);
         }
 
+
+
+
         public Texture GetTexture()
         {
             float min_xy, max_xy;
             GetMinMaxPosition(out min_xy, out max_xy);
 
-
-            int sizeOfImage = _model2D.r.Length%2==0 ? (int)Math.Sqrt(_model2D.r.Length) : (int)Math.Sqrt(_model2D.r.Length + 1);
-
-            Bitmap bitmap = new Bitmap(sizeOfImage, sizeOfImage, PixelFormat.Format32bppArgb);
+            Bitmap bitmap = new Bitmap(SizeOfImage, SizeOfImage, PixelFormat.Format32bppArgb);
 
             int index = 0;
 
-            int width = sizeOfImage;
-            int height = _model2D.r.Length/sizeOfImage;
-
-            for (int i = 0; i <width ; i++)
+            for (int i = 0; i <SizeOfImage ; i++)
             {
-                for (int j = 0; j < height; j++)
+                for (int j = 0; j < SizeOfImage; j++)
                 {
                     float x_persentage = GetPersentage(_model2D.r[index].X, min_xy, max_xy);
                     float y_persentage = GetPersentage(_model2D.r[index].Y, min_xy, max_xy);
