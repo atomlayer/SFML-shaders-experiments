@@ -6,24 +6,14 @@ uniform vec2 mouse;
 void main( void ) {
 
 	vec2 p =  gl_FragCoord.xy -resolution/8.0-mouse/2.0;
-
-	p*=4.1;
 	
+	float xx=0.0;
 	
-
-	float xx = 0.0;
-	
-	float k = time*.07;
-	
-	for(float i=0.0;i<1.0;i++)
+	for(float i=0.0;i<50.0;i+=0.4)
 	{
-		float r=sin(i*k)/cos(i*k);
-			
-		float y=r*sin(i);
-    		float x=r*cos(i);
-		
-		xx+=(1.6*sqrt(i))/length(vec2(p.x+10.0*i*x,p.y+10.0*i*y)); 
+		xx += 0.05*i/(length(p-vec2(5.0*i*sin(i*time),5.0*i*cos(i*time))));
 	}
+	
 	
 
 	vec4 color = vec4( xx,xx*0.4,0.0, 1.0 );
@@ -35,6 +25,7 @@ void main( void ) {
 	
 	color = max(color,backpixel);
 
+	color-=0.01;
 	
 	gl_FragColor = color;
 }

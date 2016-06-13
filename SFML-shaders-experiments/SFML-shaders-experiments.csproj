@@ -122,6 +122,24 @@
     <None Include="shaders\Experiment4_BackBuffer\mouse\BackBuffer1.frag">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="shaders\Experiment4_BackBuffer\mouse\BackBuffer2.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\mouse\BackBuffer3.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\mouse\BackBuffer4.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\mouse\BackBuffer5.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\mouse\BackBuffer6.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\mouse\BackBuffer7.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="shaders\Experiment4_BackBuffer\simple\BackBuffer1.frag">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

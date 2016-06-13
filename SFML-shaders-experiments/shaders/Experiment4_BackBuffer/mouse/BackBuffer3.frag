@@ -7,7 +7,7 @@ void main( void ) {
 
 	vec2 p =  gl_FragCoord.xy -resolution/8.0-mouse/2.0;
 
-	p*=4.1;
+	p*=0.5;
 	
 	
 
@@ -15,7 +15,7 @@ void main( void ) {
 	
 	float k = time*.07;
 	
-	for(float i=0.0;i<1.0;i++)
+	for(float i=0.0;i<10.0;i++)
 	{
 		float r=sin(i*k)/cos(i*k);
 			
@@ -33,7 +33,7 @@ void main( void ) {
 	
     vec4 backpixel = texture2D(texture, coord);
 	
-	color = max(color,backpixel);
+	color = mix(color,backpixel,0.5);
 
 	
 	gl_FragColor = color;
