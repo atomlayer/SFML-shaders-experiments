@@ -9,7 +9,7 @@ namespace SFML_shaders_experiments
   
         static void Main(string[] args)
         {
-            Game game =new Experiment6_GravitatioanlSimulation(RenderTo.Window);
+            Game game =new Experiment4_BackBuffer(RenderTo.Window);
             game.Run();
   
         }

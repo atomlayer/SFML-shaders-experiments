@@ -1,4 +1,5 @@
 ﻿
+using OpenTK.Graphics.OpenGL;
 using SFML.Graphics;
 using SFML.System;
 
@@ -9,7 +10,6 @@ namespace SFML_shaders_experiments
         public Experiment4_BackBuffer(RenderTo render) 
             : base(1800, 1000, "Shader1 PolarPlot", Color.Blue,render)
         {
-            RenderTo=RenderTo.Image;
         }
 
         private Texture _texture;
@@ -20,6 +20,9 @@ namespace SFML_shaders_experiments
         private float _time;
 
         private RenderStates _rState;
+
+
+        private RenderTexture _backTexture;
 
         public override void Load()
         {
@@ -34,13 +37,14 @@ namespace SFML_shaders_experiments
             _rectangleShape.Texture = _texture;
 
             _shader = new Shader(@"shaders\VertexShader.vert",
-                @"shaders\Experiment1_PolarPlot.frag");
+                @"shaders\Experiment4_BackBuffer.frag");
 
             _shader.SetParameter("time", _time);
             _shader.SetParameter("resolution",new Vector2f(window.Size.X,window.Size.Y));
             _rState = new RenderStates(_shader);
             _rState.Texture = _texture;
 
+            _backTexture = new RenderTexture(window.Size.X, window.Size.Y);
         }
 
         
@@ -48,16 +52,21 @@ namespace SFML_shaders_experiments
         public override void Update()
         {
             _shader.SetParameter("time", _time);
-            _time += 0.05f;
+            _shader.SetParameter("texture",_backTexture.Texture);
+            _time += 0.005f;
         }
 
         public override void Render()
         {
-            if(RenderTo == RenderTo.Window)
+            if (RenderTo == RenderTo.Window)
+            {
                 window.Draw(_rectangleShape, _rState);
+                _backTexture.Draw(_rectangleShape, _rState);
+            }
             else
             {
                 RenderTexture.Draw(_rectangleShape, _rState);
+                _backTexture.Draw(_rectangleShape, _rState);
             }
         }
     }
