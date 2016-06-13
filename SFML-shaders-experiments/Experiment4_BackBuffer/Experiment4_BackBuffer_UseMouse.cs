@@ -4,9 +4,9 @@ using SFML.System;
 
 namespace SFML_shaders_experiments.Experiment4_BackBuffer
 {
-    class Experiment4_BackBuffer_UseMouse : Game
+    class Experiment4_BackBuffer_SetMousePos : Game
     {
-        public Experiment4_BackBuffer_UseMouse(RenderTo render) 
+        public Experiment4_BackBuffer_SetMousePos(RenderTo render) 
             : base(1800, 1000, "Experiment4_BackBuffer_UseMouse", Color.Blue,render)
         {
         }

@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Experiment4_BackBuffer\Experiment4_BackBuffer_SetMousePos.cs" />
     <Compile Include="Experiment4_BackBuffer\Experiment4_BackBuffer_UseMouse.cs" />
     <Compile Include="Experiment6_GravitatioanlSimulation.cs" />
     <Compile Include="Experiment5_SphereEquation.cs" />
@@ -147,6 +148,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="shaders\Experiment4_BackBuffer\simple\BackBuffer3.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\simple\BackBuffer4.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\simple\BackBuffer_eight5.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\simple\BackBuffer_infinity_6.frag">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="shaders\Experiment6_GravitatioanlSimulation\Experiment6_GravitatioanlSimulation.frag">

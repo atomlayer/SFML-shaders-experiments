@@ -10,7 +10,7 @@ namespace SFML_shaders_experiments
   
         static void Main(string[] args)
         {
-            Game game =new Experiment4_BackBuffer_UseMouse(RenderTo.Window);
+            Game game =new Experiment4_BackBuffer_Simple(RenderTo.Window);
             game.Run();
   
         }
