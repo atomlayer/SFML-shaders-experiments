@@ -1,14 +1,12 @@
-﻿
-using OpenTK.Graphics.OpenGL;
-using SFML.Graphics;
+﻿using SFML.Graphics;
 using SFML.System;
 
-namespace SFML_shaders_experiments
+namespace SFML_shaders_experiments.Experiment4_BackBuffer
 {
-    class Experiment4_BackBuffer : Game
+    class Experiment4_BackBuffer_Simple : Game
     {
-        public Experiment4_BackBuffer(RenderTo render) 
-            : base(1800, 1000, "Shader1 PolarPlot", Color.Blue,render)
+        public Experiment4_BackBuffer_Simple(RenderTo render) 
+            : base(1800, 1000, "Experiment4_BackBuffer_Simple", Color.Blue,render)
         {
         }
 
@@ -37,7 +35,7 @@ namespace SFML_shaders_experiments
             _rectangleShape.Texture = _texture;
 
             _shader = new Shader(@"shaders\VertexShader.vert",
-                @"shaders\Experiment4_BackBuffer.frag");
+                @"shaders\Experiment4_BackBuffer\simple\BackBuffer2.frag");
 
             _shader.SetParameter("time", _time);
             _shader.SetParameter("resolution",new Vector2f(window.Size.X,window.Size.Y));

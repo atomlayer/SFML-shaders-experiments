@@ -1,6 +1,7 @@
 ﻿using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
+using SFML_shaders_experiments.Experiment4_BackBuffer;
 
 namespace SFML_shaders_experiments
 {
@@ -9,7 +10,7 @@ namespace SFML_shaders_experiments
   
         static void Main(string[] args)
         {
-            Game game =new Experiment4_BackBuffer(RenderTo.Window);
+            Game game =new Experiment4_BackBuffer_UseMouse(RenderTo.Window);
             game.Run();
   
         }

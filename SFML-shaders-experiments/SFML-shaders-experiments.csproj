@@ -57,6 +57,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -65,9 +66,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Experiment4_BackBuffer\Experiment4_BackBuffer_UseMouse.cs" />
     <Compile Include="Experiment6_GravitatioanlSimulation.cs" />
     <Compile Include="Experiment5_SphereEquation.cs" />
-    <Compile Include="Experiment4_BackBuffer.cs" />
+    <Compile Include="Experiment4_BackBuffer\Experiment4_BackBuffer_Simple.cs" />
     <Compile Include="Experiment3_ArtificialSun.cs" />
     <Compile Include="Experiment2_MusicVisualization.cs" />
     <Compile Include="Game.cs" />
@@ -117,7 +119,16 @@
     <None Include="shaders\Experiment3_ArtificialSun\sun9.frag">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="shaders\Experiment4_BackBuffer.frag">
+    <None Include="shaders\Experiment4_BackBuffer\mouse\BackBuffer1.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\simple\BackBuffer1.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\simple\BackBuffer2.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\simple\BackBuffer3.frag">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="shaders\Experiment6_GravitatioanlSimulation\Experiment6_GravitatioanlSimulation.frag">
