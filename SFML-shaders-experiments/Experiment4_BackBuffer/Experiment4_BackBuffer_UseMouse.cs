@@ -36,7 +36,7 @@ namespace SFML_shaders_experiments.Experiment4_BackBuffer
             _rectangleShape.Texture = _texture;
 
             _shader = new Shader(@"shaders\VertexShader.vert",
-                @"shaders\Experiment4_BackBuffer\mouse\BackBuffer7.frag");
+                @"shaders\Experiment4_BackBuffer\mouse\BackBuffer1.frag");
 
             _shader.SetParameter("time", _time);
             _shader.SetParameter("resolution",new Vector2f(window.Size.X,window.Size.Y));

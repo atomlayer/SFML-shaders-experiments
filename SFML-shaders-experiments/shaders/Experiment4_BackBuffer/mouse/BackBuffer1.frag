@@ -5,17 +5,16 @@ uniform vec2 mouse;
 
 void main( void ) {
 
-	vec2 p =  gl_FragCoord.xy -resolution/8.0-mouse/2.0;
+	vec2 p =  gl_FragCoord.xy -vec2(mouse.x,resolution.y-mouse.y);
 
-	p*=4.1;
-	
-	
+	p*=0.5;
+
 
 	float xx = 0.0;
 	
 	float k = time*.07;
 	
-	for(float i=0.0;i<1.0;i++)
+	for(float i=0.0;i<5.0;i++)
 	{
 		float r=sin(i*k)/cos(i*k);
 			
@@ -31,10 +30,11 @@ void main( void ) {
 	
 	vec2 coord = gl_TexCoord[0].st;
 	
-    vec4 backpixel = texture2D(texture, coord);
+    vec4 backpixel = texture2D(texture,  vec2(coord.x,1.0-coord.y));
 	
 	color = max(color,backpixel);
 
+	color-=0.002;
 	
 	gl_FragColor = color;
 }

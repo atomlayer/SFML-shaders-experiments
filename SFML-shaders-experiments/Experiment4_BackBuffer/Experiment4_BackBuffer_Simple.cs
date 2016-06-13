@@ -29,20 +29,20 @@ namespace SFML_shaders_experiments.Experiment4_BackBuffer
 
         public override void Initialize()
         {
-            _texture = new Texture(window.Size.X,window.Size.Y);
+            _texture = new Texture(Size.X, Size.Y);
 
-            _rectangleShape = new RectangleShape(new Vector2f(window.Size.X, window.Size.Y));
+            _rectangleShape = new RectangleShape(new Vector2f(Size.X, Size.Y));
             _rectangleShape.Texture = _texture;
 
             _shader = new Shader(@"shaders\VertexShader.vert",
-                @"shaders\Experiment4_BackBuffer\simple\BackBuffer7.frag");
+                @"shaders\Experiment4_BackBuffer\duplicationbug\simple\BackBuffer_infinity_6.frag");
 
             _shader.SetParameter("time", _time);
-            _shader.SetParameter("resolution",new Vector2f(window.Size.X,window.Size.Y));
+            _shader.SetParameter("resolution",new Vector2f(Size.X, Size.Y));
             _rState = new RenderStates(_shader);
             _rState.Texture = _texture;
 
-            _backTexture = new RenderTexture(window.Size.X, window.Size.Y);
+            _backTexture = new RenderTexture(Size.X, Size.Y);
         }
 
         
