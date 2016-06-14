@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Experiment4_BackBuffer\Experiment4_BackBuffer_ProgramControl.cs" />
     <Compile Include="Experiment4_BackBuffer\Experiment4_BackBuffer_UseMouse.cs" />
     <Compile Include="Experiment6_GravitatioanlSimulation.cs" />
     <Compile Include="Experiment5_SphereEquation.cs" />
@@ -161,7 +162,22 @@
     <None Include="shaders\Experiment4_BackBuffer\duplicationbug\simple\BackBuffer_infinity_6.frag">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="shaders\Experiment4_BackBuffer\mouse\BackBufferSnake2.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="shaders\Experiment4_BackBuffer\mouse\BackBuffer1.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\programControl\BackBufferSnake4.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\programControl\BackBufferSnake3.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\programControl\BackBufferSnake2.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\simple\BackBuffer_cannabinoid2.frag">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="shaders\Experiment4_BackBuffer\simple\BackBuffer1.frag">
