@@ -168,6 +168,9 @@
     <None Include="shaders\Experiment4_BackBuffer\mouse\BackBuffer1.frag">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="shaders\Experiment4_BackBuffer\programControl\BackBuffer5.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="shaders\Experiment4_BackBuffer\programControl\BackBufferSnake4.frag">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -37,7 +37,7 @@ namespace SFML_shaders_experiments.Experiment4_BackBuffer
             _rectangleShape.Texture = _texture;
 
             _shader = new Shader(@"shaders\VertexShader.vert",
-                @"shaders\Experiment4_BackBuffer\programControl\BackBufferSnake3.frag");
+                @"shaders\Experiment4_BackBuffer\programControl\BackBuffer5.frag");
 
             _shader.SetParameter("time", _time);
             _shader.SetParameter("resolution",new Vector2f(Size.X, Size.Y));
@@ -55,6 +55,7 @@ namespace SFML_shaders_experiments.Experiment4_BackBuffer
         Vector2f _velosity = new Vector2f(1.5f,1.5f);
         Random  _random = new Random();
 
+       
 
         public override void Update()
         {
@@ -63,8 +64,7 @@ namespace SFML_shaders_experiments.Experiment4_BackBuffer
             _shader.SetParameter("mouse",_position);
             _time += 0.005f;
 
-
-            _position += new Vector2f(_velosity.X*(float)((_random.NextDouble()>0.5?-1:1)* _random.NextDouble()),
+             _position += new Vector2f(_velosity.X*(float)((_random.NextDouble()>0.5?-1:1)* _random.NextDouble()),
             _velosity.Y * (float)((_random.NextDouble() > 0.5 ? -1 : 1) * _random.NextDouble()));
             if (_position.X >= Size.X-100 || _position.X <=0)
                 _velosity.X *= -1;
