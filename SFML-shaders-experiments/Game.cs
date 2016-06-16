@@ -16,7 +16,7 @@ namespace SFML_shaders_experiments
         Stopwatch _stopwatch = new Stopwatch();
 
 
-        public int FrameRateLimit = 60;
+        public int FrameRateLimit = 250;
 
         public RenderTo RenderTo;
 
@@ -32,7 +32,7 @@ namespace SFML_shaders_experiments
                 this.window = new RenderWindow(new VideoMode(width, height), title, Styles.Resize);
                 window.SetActive(true);
                 window.Position = new Vector2i(window.Position.X, 0);
-                //window.SetFramerateLimit((uint) FrameRateLimit);
+                window.SetFramerateLimit((uint) FrameRateLimit);
                 // Set up events
                 window.Closed += OnClosed;
             }
@@ -66,25 +66,25 @@ namespace SFML_shaders_experiments
                 
                 Update();
 
-                if (RenderTo == RenderTo.Window)
-                {
-                    window.DispatchEvents();
+                    if (RenderTo == RenderTo.Window)
+                    {
+                        window.DispatchEvents();
 
-                    window.Clear(clearColor);
-                    Render();
-                    window.Display();
+                        window.Clear(clearColor);
+                        Render();
+                        window.Display();
 
-                }
-                else
-                {
-                    RenderTexture.Clear(clearColor);
-                    Render();
-                    Texture texture = RenderTexture.Texture;
-                    Image image = texture.CopyToImage();
-                    image.SaveToFile($"data\\img{_index}.png");
-                    image.Dispose();
+                    }
+                    else
+                    {
+                        RenderTexture.Clear(clearColor);
+                        Render();
+                        Texture texture = RenderTexture.Texture;
+                        Image image = texture.CopyToImage();
+                        image.SaveToFile($"data\\img{_index}.png");
+                        image.Dispose();
 
-                }
+                    }
 
                 _index++;
 

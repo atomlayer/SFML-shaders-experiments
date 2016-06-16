@@ -171,6 +171,18 @@
     <None Include="shaders\Experiment4_BackBuffer\programControl\BackBuffer5.frag">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="shaders\Experiment4_BackBuffer\programControl\BackBufferSnake9.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\programControl\BackBufferSnake8.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\programControl\BackBuffer7.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\programControl\BackBufferRadar6.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="shaders\Experiment4_BackBuffer\programControl\BackBufferSnake4.frag">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
