@@ -35,7 +35,7 @@ namespace SFML_shaders_experiments.Experiment4_BackBuffer
             _rectangleShape.Texture = _texture;
 
             _shader = new Shader(@"shaders\VertexShader.vert",
-                @"shaders\Experiment4_BackBuffer\simple\BackBuffer_cannabinoid2.frag");
+                @"shaders\Experiment4_BackBuffer\simple\BackBufferCheckerboard4.frag");
 
             _shader.SetParameter("time", _time);
             _shader.SetParameter("resolution",new Vector2f(Size.X, Size.Y));

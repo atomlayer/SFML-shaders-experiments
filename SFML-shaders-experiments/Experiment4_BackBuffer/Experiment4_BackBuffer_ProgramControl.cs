@@ -37,7 +37,7 @@ namespace SFML_shaders_experiments.Experiment4_BackBuffer
             _rectangleShape.Texture = _texture;
 
             _shader = new Shader(@"shaders\VertexShader.vert",
-                @"shaders\Experiment4_BackBuffer\programControl\BackBufferSnake9.frag");
+                @"shaders\Experiment4_BackBuffer\programControl\BackBufferFoliage14.frag");
 
             _shader.SetParameter("time", _time);
             _shader.SetParameter("resolution",new Vector2f(Size.X, Size.Y));

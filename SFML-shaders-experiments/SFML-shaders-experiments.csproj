@@ -162,16 +162,37 @@
     <None Include="shaders\Experiment4_BackBuffer\duplicationbug\simple\BackBuffer_infinity_6.frag">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="shaders\Experiment4_BackBuffer\mouse\BackBufferCheckerboard3.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="shaders\Experiment4_BackBuffer\mouse\BackBufferSnake2.frag">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="shaders\Experiment4_BackBuffer\mouse\BackBuffer1.frag">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="shaders\Experiment4_BackBuffer\programControl\BackBuffer15.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\programControl\BackBufferFoliage14.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\programControl\BackBufferFoliage13.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\programControl\BackBufferFoliage12.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\programControl\BackBufferFoliage11.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="shaders\Experiment4_BackBuffer\programControl\BackBuffer5.frag">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="shaders\Experiment4_BackBuffer\programControl\BackBufferSnake9.frag">
+    <None Include="shaders\Experiment4_BackBuffer\programControl\BackBufferFoliage10.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\programControl\BackBuffer9.frag">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="shaders\Experiment4_BackBuffer\programControl\BackBufferSnake8.frag">
@@ -190,6 +211,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="shaders\Experiment4_BackBuffer\programControl\BackBufferSnake2.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\simple\BackBufferCheckerboard4.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="shaders\Experiment4_BackBuffer\simple\BackBufferCheckerboard3.frag">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="shaders\Experiment4_BackBuffer\simple\BackBuffer_cannabinoid2.frag">
